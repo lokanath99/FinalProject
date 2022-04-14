@@ -8,15 +8,21 @@ header("Content-Type: application/json; charset=UTF-8");
 include_once 'C:\xampp\htdocs\FP\authenticate\authDB.php';
 
 $dbname = 'FP';
-$collection = 'users';
 
+if(isset($_GET['collection'])){
+    $collection = ''.$_GET['collection'];
+} else $collection = 'users';
+
+if(isset($_GET['phone'])){
+    $filter = ['phone'=>$_GET['phone']];
+} else $filter = [];
 
 //DB connection
 $db = new dbManager();
 $conn = $db->dbConnect();
 
 // read all records
-$filter = [];
+
 $option = [];
 $read = new MongoDB\Driver\Query($filter, $option);
 

@@ -3,10 +3,10 @@
     require 'C:\xampp\htdocs\FP\vendor\autoload.php';
     class dbManager{
         private $conn;
-        private $connection_string = ''; 
+        private $connection_string = 'mongodb://localhost:27017'; 
         public function dbConnect(){
             try {
-                $this->conn = new MongoDB\Driver\Manager();
+                $this->conn = new MongoDB\Driver\Manager($this->connection_string);
                 return $this->conn;
             }
             catch (Throwable $e) {
