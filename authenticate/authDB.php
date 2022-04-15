@@ -15,6 +15,9 @@
                 return $e->getMessage();
             }            
         }
+        public function getConnectionString(){
+            return $this->connection_string;
+        }
     }    
         
 
