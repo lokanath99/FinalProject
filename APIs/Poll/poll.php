@@ -13,8 +13,9 @@ $dataManager = new dbManager();
 $uri = $dataManager->getConnectionString();
 
 $client = new MongoDB\Client($uri);
+$collection = $client->FP->users_of_finanacial_services;# set watch for specific collection 
 
-$changeStream = $client->watch();
+$changeStream = $collection->watch();
 
 for ($changeStream->rewind(); true; $changeStream->next()) {
     if ( ! $changeStream->valid()) {

@@ -3,7 +3,7 @@
     require 'C:\xampp\htdocs\FP\vendor\autoload.php';
     class dbManager{
         private $conn;
-        private $connection_string = 'mongodb://localhost:27017'; 
+        private $connection_string = 'mongodb+srv://lokanath:lokanath1999@cluster0.hvfvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'; 
         public function dbConnect(){
             try {
                 $this->conn = new MongoDB\Driver\Manager($this->connection_string);
