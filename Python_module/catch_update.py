@@ -13,4 +13,5 @@ getPage.raise_for_status() #if error it will stop the program
 page = bs4.BeautifulSoup(getPage.text, 'html.parser')
 whats_new = page.select('.whats-new')
 
+print( whats_new )
 
