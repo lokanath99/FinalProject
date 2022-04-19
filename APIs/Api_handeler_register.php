@@ -1,11 +1,14 @@
 <?php
 
-$data = json_decode(file_get_contents("php://input", true));
-$data = $data->info;
-$data_decode = $data.explode(",", $data);
-$url = "http://localhost/FP/APIs/Write/agri_and_farmer_user.php";
+require 'C:\xampp\htdocs\FP\vendor\autoload.php';
+use Symfony\Component\HttpClient\HttpClient;
 
-switch(trim($data_decode[2])){
+global $url;
+$json_data = json_decode(file_get_contents("php://input", true));
+$data = (string)$json_data->info;
+$data_decode = explode(',',$data);
+
+switch((int)trim($data_decode[2])){
     case 1:
         $url = "http://localhost/FP/APIs/Write/agri_and_farmer_user.php";
         break;
@@ -23,23 +26,21 @@ switch(trim($data_decode[2])){
         break;
 
 }
+// echo $url;
 
-$data_post = array('name' => $data_decode[0], 'phone' => $data_decode[1]);
+$data_post = 
+    array(
+        'name' => trim($data_decode[0]), 
+        'phone' => trim($data_decode[1])
+    );
 
-print($data_post);
+$httpClient = HttpClient::create();
 
-// use key 'http' even if you send the request to https://...
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data_post)
-    )
-);
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-if ($result === FALSE) { /* Handle error */ }
-
-var_dump($result);
+$response = $httpClient->request('POST', $url, [
+    'body' => json_encode($data_post),
+    'headers' => ['Content-Type' => 'application/json']
+]);
+    
+echo $response->getContent();
 
 ?>

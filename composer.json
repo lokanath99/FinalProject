@@ -1,6 +1,7 @@
 {
     "require": {
         "twilio/sdk": "^6.36",
-        "mongodb/mongodb": "^1.12"
+        "mongodb/mongodb": "^1.12",
+        "symfony/http-client": "^6.0"
     }
 }
