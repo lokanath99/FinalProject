@@ -2,6 +2,7 @@
     "require": {
         "twilio/sdk": "^6.36",
         "mongodb/mongodb": "^1.12",
-        "symfony/http-client": "^6.0"
+        "symfony/http-client": "^6.0",
+        "guzzlehttp/guzzle": "^7.4"
     }
 }
