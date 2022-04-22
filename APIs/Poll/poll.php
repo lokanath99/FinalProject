@@ -13,7 +13,7 @@ $dataManager = new dbManager();
 $uri = $dataManager->getConnectionString();
 
 $client = new MongoDB\Client($uri);
-$collection = $client->FP->users_of_finanacial_services;# set watch for specific collection 
+$collection = $client->FP->scheme_updates;# set watch for specific collection 
 
 $changeStream = $collection->watch();
 

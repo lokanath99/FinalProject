@@ -1,5 +1,6 @@
 <?php
 require 'C:\xampp\htdocs\FP\vendor\autoload.php';
+use Symfony\Component\HttpClient\HttpClient;
 
 #web scrapper
 $url = 'https://www.india.gov.in/my-government/schemes';
@@ -15,14 +16,19 @@ $xpath = new DOMXPath($doc);
 
 #extraction the links
 $extracted_links = [];
+$headers = [];
 $links = $xpath->evaluate('/html/body/div[1]/main/div[2]/div/section/div/div/div/div/div[3]/div/div[3]/div/div/div/div[2]/div/ul/li/div/span/a');
 
 foreach($links as $link){
+
 $extracted_links[] = $link->getAttribute('href');
+$headers[] = $link->textContent;
 // echo $link->getAttribute('href').PHP_EOL;
+
 }
 
 $data = [];
+$i = 0; 
 
 foreach($extracted_links as $links){
 
@@ -34,15 +40,20 @@ $doc = new DOMDocument();
 $doc->loadHTML($htmlString);
 $xpath = new DOMXPath($doc);
 $info = $xpath->evaluate('/html/body/div/main/div[2]/div/section/div/div/div/div/div/div/div[1]/div/div/div/div/ol/li/div[2]/div/p');
-$data[$links] = $info->item(0)->nodeValue;
+$data[] = $info->item(0)->nodeValue;
+$data_post = array(
+    "name" => $headers[$i],
+    "info" => $data[$i],
+    "date" => date("d/m/Y")
+);
+$httpClient = HttpClient::create();
+$reaponse = $httpClient->request('POST', 'C:\xampp\htdocs\FP\APIs\Write\scheme_updates.php'/*url to be added*/, [
+    'body' => json_encode($data_post),
+    'headers' => ['Content-Type' => 'application/json']
+]
+);
+$i += 1;
 
 }
-
-// print_r($data);
-
-#running the poll script to catch the DB changes and send sms
-// $httpClient = HttpClient::create();
-// $response = $httpClient->request('GET', 'C:\xampp\htdocs\FP\APIs\Poll\poll.php');
-// echo $response->getStatusCode();
 
 ?>
