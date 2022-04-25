@@ -11,7 +11,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once 'C:\xampp\htdocs\FP\authenticate\authDB.php';
 
 $dbname = 'FP';
-$collection = 'users_of_agri_and farm';
+$collection = 'users_of_agri_and_farm';
 
 //DB connection
 $db = new dbManager();

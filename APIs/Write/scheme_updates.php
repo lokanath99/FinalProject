@@ -1,4 +1,6 @@
 <?php
+#yet to implement check previous data
+
 
 // required headers
 header("Access-Control-Allow-Origin: *");
@@ -9,12 +11,6 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // include database file
 include_once 'C:\xampp\htdocs\FP\authenticate\authDB.php';
-use Symfony\Component\HttpClient\HttpClient;
-
-
-// #calling poll using get
-// $httpClient = HttpClient::create();
-// $reaponse = $httpClient->request('GET', 'http://localhost/FP/APIs/Poll/poll.php');
 
 
 $dbname = 'FP';
@@ -24,6 +20,16 @@ $collection = 'scheme_updates';
 $db = new dbManager();
 $conn = $db->dbConnect();
 
+$filter = ['name'=>$_POST['name']];
+$option = [];#used for projections
+$read = new MongoDB\Driver\Query($filter, $option);
+
+//fetch records
+
+$records = $conn->executeQuery("$dbname.$collection", $read);
+
+//check if record dosnt exist
+if(json_encode(iterator_to_array($records)) == []){
 //record to add
 $data = json_decode(file_get_contents("php://input", true));
 
@@ -43,6 +49,7 @@ if ($result->getInsertedCount() == 1) {
             array("message" => "Error while saving record")
     );
 }
-
-
+}else echo json_encode(
+        array('message'=>'record already exist')
+);
 ?>

@@ -33,21 +33,21 @@ for ($changeStream->rewind(); true; $changeStream->next()) {
 
     switch ($event['operationType']) {
         case 'delete':
-            printf("Deleted document in %s with _id: %s\n\n", $ns, $id);
+            echo "Deleted document in $ns with _id: $id\n";
             break;
 
         case 'insert':
-            printf("Inserted new document in %s\n", $ns);
+            echo "Inserted new document in $ns\n";
             echo json_encode($event['fullDocument']), "\n\n";
             break;
 
         case 'replace':
-            printf("Replaced new document in %s with _id: %s\n", $ns, $id);
+            echo "Replaced new document in $ns with _id: $id\n";
             echo json_encode($event['fullDocument']), "\n\n";
             break;
 
         case 'update':
-            printf("Updated document in %s with _id: %s\n", $ns, $id);
+            echo "Updated document in $ns with _id: $id\n";
             echo json_encode($event['updateDescription']), "\n\n";
             break;
     }

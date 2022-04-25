@@ -31,29 +31,38 @@ $data = [];
 $i = 0; 
 
 foreach($extracted_links as $links){
-
+$httpClient1 = new \GuzzleHttp\Client();
 $url1 = 'https://www.india.gov.in'.strip_tags($links);
-$response = $httpClient->get($url1);
-$htmlString = (string) $response->getBody();
+$response1 = $httpClient1->get($url1);
+$htmlString1 = (string) $response1->getBody();
 libxml_use_internal_errors(true);
-$doc = new DOMDocument();
-$doc->loadHTML($htmlString);
-$xpath = new DOMXPath($doc);
-$info = $xpath->evaluate('/html/body/div/main/div[2]/div/section/div/div/div/div/div/div/div[1]/div/div/div/div/ol/li/div[2]/div/p');
+$doc1 = new DOMDocument();
+$doc1->loadHTML($htmlString1);
+$xpath1 = new DOMXPath($doc1);
+$info = $xpath1->evaluate('/html/body/div/main/div[2]/div/section/div/div/div/div/div/div/div[1]/div/div/div/div/ol/li/div[2]/div/p');
 $data[] = $info->item(0)->nodeValue;
 $data_post = array(
     "name" => $headers[$i],
     "info" => $data[$i],
     "date" => date("d/m/Y")
 );
-$httpClient = HttpClient::create();
-$reaponse = $httpClient->request('POST', 'C:\xampp\htdocs\FP\APIs\Write\scheme_updates.php'/*url to be added*/, [
+$httpClient2 = HttpClient::create();
+$reaponse2 = $httpClient2->request('POST', 'http://localhost/FP/APIs/Write/scheme_updates.php'/*url to be added*/, [
     'body' => json_encode($data_post),
     'headers' => ['Content-Type' => 'application/json']
 ]
 );
+echo $reaponse2->getContent();
 $i += 1;
 
 }
+echo json_encode(
+    array("message" => "scrapper finished job, calling the updates logs")
+);
+// #calling update_logs using get
+$httpClient3 = HttpClient::create();
+$reaponse3 = $httpClient3->request('GET', 'http://localhost/FP/APIs/Read/update_logs.php');
+echo $reaponse3->getContent();
+
 
 ?>
