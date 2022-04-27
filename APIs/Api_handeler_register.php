@@ -1,6 +1,6 @@
 <?php
-
-require 'C:\xampp\htdocs\FP\vendor\autoload.php';
+include_once '../../authenticate/authDB.php';
+include_once '../../vendor/autoload.php';
 use Symfony\Component\HttpClient\HttpClient;
 
 global $url;
@@ -10,19 +10,19 @@ $data_decode = explode(',',$data);
 
 switch((int)trim($data_decode[2])){
     case 1:
-        $url = "http://localhost/FP/APIs/Write/agri_and_farmer_user.php";
+        $url = "http://localhost/schemecatalysts/APIs/Write/agri_and_farmer_user.php";
         break;
     case 2:
-        $url = "http://localhost/FP/APIs/Write/financial_service_users.php";
+        $url = "http://localhost/schemecatalysts/APIs/Write/financial_service_users.php";
         break;
     case 3:
-        $url = "http://localhost/FP/APIs/Write/rural_dev_users.php";
+        $url = "http://localhost/schemecatalysts/APIs/Write/rural_dev_users.php";
         break;
     case 4:
-        $url = "http://localhost/FP/APIs/Write/skill_dev_and_enterpreneur_user.php";
+        $url = "http://localhost/schemecatalysts/APIs/Write/skill_dev_and_enterpreneur_user.php";
         break;
     case 5:
-        $url = "http://localhost/FP/APIs/Write/women_and_child_users.php";
+        $url = "http://localhost/schemecatalysts/APIs/Write/women_and_child_users.php";
         break;
 
 }

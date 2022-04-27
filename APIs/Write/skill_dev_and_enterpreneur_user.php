@@ -8,23 +8,21 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // include database file
-include_once 'C:\xampp\htdocs\FP\authenticate\authDB.php';
-
-$dbname = 'FP';
-$collection = 'users_of_skill_dev_and_enterpreneur';
-
+include_once '../../authenticate/authDB.php';
+include_once '../../vendor/autoload.php';
 //DB connection
 $db = new dbManager();
 $conn = $db->dbConnect();
+$dbname = $conn->FP;
+$collection = $dbname->users_of_skill_dev_and_enterpreneur;
+
 
 //record to add
 $data = json_decode(file_get_contents("php://input", true));
 
 // insert record
-$insert = new MongoDB\Driver\BulkWrite();
-$insert->insert($data);
 
-$result = $conn->executeBulkWrite("$dbname.$collection", $insert);
+$result = $collection->insertOne($data);
 
 // verify
 if ($result->getInsertedCount() == 1) {

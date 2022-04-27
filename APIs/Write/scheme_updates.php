@@ -10,46 +10,36 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // include database file
-include_once 'C:\xampp\htdocs\FP\authenticate\authDB.php';
+include_once '../../authenticate/authDB.php';
+include_once '../../vendor/autoload.php';
 
-
-$dbname = 'FP';
-$collection = 'scheme_updates';
 
 //DB connection
 $db = new dbManager();
 $conn = $db->dbConnect();
+$dbname = $conn->FP;
+$collection = $dbname->scheme_updates;
 
-$filter = ['name'=>$_POST['name']];
-$option = [];#used for projections
-$read = new MongoDB\Driver\Query($filter, $option);
 
-//fetch records
-
-$records = $conn->executeQuery("$dbname.$collection", $read);
-
-//check if record dosnt exist
-if(json_encode(iterator_to_array($records)) == []){
-//record to add
 $data = json_decode(file_get_contents("php://input", true));
-
-// insert record
-$insert = new MongoDB\Driver\BulkWrite();
-$insert->insert($data);
-
-$result = $conn->executeBulkWrite("$dbname.$collection", $insert);
-
+$data = (array)$data;
+$records = $collection->find(['name'=>$data['name']]);
+$records = $records->toArray();
+// print_r($records);
+//check if record dosnt exist
+if(empty($records)){
+$result = $collection->insertOne($data);
 // verify
 if ($result->getInsertedCount() == 1) {
     echo json_encode(
 		array("message" => "Record successfully created")
 	);
-} else {
+}else {
     echo json_encode(
             array("message" => "Error while saving record")
     );
-}
-}else echo json_encode(
+}}elseif (!empty($records))
+echo json_encode(
         array('message'=>'record already exist')
 );
 ?>
