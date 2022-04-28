@@ -6,7 +6,6 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include database file
 include_once '/app/authenticate/authDB.php';
-include_once '/app/Control/send_message.php';
 include_once '/app/vendor/autoload.php';
 
 
