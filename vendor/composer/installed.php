@@ -5,9 +5,9 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5b0fa472b4563cf132b3343304b2b1047b283d6e',
+        'reference' => '3395a938f0b73f2f3e08721a8c9640e1f392c787',
         'name' => '__root__',
-        'dev' => true,
+        'dev' => false,
     ),
     'versions' => array(
         '__root__' => array(
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5b0fa472b4563cf132b3343304b2b1047b283d6e',
+            'reference' => '3395a938f0b73f2f3e08721a8c9640e1f392c787',
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(
@@ -158,12 +158,12 @@
             'dev_requirement' => false,
         ),
         'symfony/http-client' => array(
-            'pretty_version' => 'v6.0.7',
-            'version' => '6.0.7.0',
+            'pretty_version' => 'v6.0.8',
+            'version' => '6.0.8.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/http-client',
             'aliases' => array(),
-            'reference' => 'a7930c47248b9b57e9d0b8da100ffc1e031536dc',
+            'reference' => 'd347895193283e08b4c3ebf2f2974a1df3e1f670',
             'dev_requirement' => false,
         ),
         'symfony/http-client-contracts' => array(
