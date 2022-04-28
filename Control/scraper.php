@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+require '/app/vendor/autoload.php';
 use Symfony\Component\HttpClient\HttpClient;
 
 #web scrapper

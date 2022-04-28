@@ -8,8 +8,8 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // include database file
-include_once '../../authenticate/authDB.php';
-include_once '../../vendor/autoload.php';
+include_once '/app/authenticate/authDB.php';
+include_once '/app/vendor/autoload.php';
 //DB connection
 $db = new dbManager();
 $conn = $db->dbConnect();
