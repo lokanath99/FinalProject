@@ -5,8 +5,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 // include database file
-include_once '/app/authenticate/authDB.php';
-include_once '/app/vendor/autoload.php';
+include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
+include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
 
 
 //DB connection
