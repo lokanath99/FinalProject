@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php 
+    include_once 'C:\xampp\htdocs\schemecatalysts\Control\library.php';
+    include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
+    include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+if(chkLogin()){
+    $name = $_SESSION['uname'];
+    echo '
+
+    <!DOCTYPE html>
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +20,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">SchemeCatalysts</a>
+            <a class="navbar-brand" href="#http://localhost/schemecatalysts/">SchemeCatalysts</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,7 +31,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                    <li><a href="http://localhost/schemecatalysts/Control/clearall.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -31,7 +39,7 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Welcome to Panchayt Dashboard</h1>
+            <h1 class="display-4">Welcome to Panchayt Dashboard '.$name.'</h1>
             <p class="lead">Please Fill The Info To Send The Messages To The Subscribers</p>
         </div>
     </div>
@@ -40,15 +48,15 @@
         <form method="POST" action="http://localhost/schemecatalysts/APIs/message_sender.php">
             <div class="form-group">
                 <label for="name">Title of message</label>
-                <input type="text" name='name' class="form-control" id="name" placeholder="Enter Title">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Title">
                 <small id="name" class="form-text text-muted">Please mention the department from which message is intended</small>
             </div>
             <div class="form-group">
                 <label for="info">Text message</label>
-                <input  name='info' type="text" class="form-control" id="info" placeholder="Type the Message">
+                <input  name="info" type="text" class="form-control" id="info" placeholder="Type the Message">
             </div>
             <div class="form-group">
-                <label for='cat'>Select Category</label>
+                <label for="cat">Select Category</label>
                 <select name="cat" id="cat">
                     <option value="1">agri and farm</option>
                     <option value="2">finance</option>
@@ -57,7 +65,7 @@
                     <option value="5">women and children</option>
                 </select>
             </div>
-            <input name="dnt" type='date' disabled>
+            <input name="dnt" type="date" disabled>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
         <br/>
@@ -74,11 +82,10 @@
     <div class="card">
                 <div class="card-header">
                   Recent Messages sent
-                </div>
-        <?php
+                </div>';
+
         // // include database file
-        include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
-        include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+        
 
         //DB connection
         $db = new dbManager();
@@ -100,9 +107,18 @@
               </div>
               <br/>';
         }
-        ?>
+    echo '    
     </div>
 
 </body>
 
 </html>
+    ';
+    
+    //////////////
+
+}
+else{
+    header("Location: http://localhost/schemecatalysts/index.php");
+}
+?>
