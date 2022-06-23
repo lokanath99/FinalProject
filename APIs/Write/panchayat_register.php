@@ -7,8 +7,8 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // include database file
-include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
-include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+include_once '/app/authenticate/authDB.php';
+include_once '/app/vendor/autoload.php';
 if(chkLogin()){
 //DB connection
 $db = new dbManager();
@@ -28,7 +28,7 @@ if ($result->getInsertedCount() == 1) {
 		array("message" => "Added the Panchayat. Thankyou")
 	);
     sleep(5);
-    header('location: http://localhost/schemecatalysts/View/panchayat_dash.php');
+    header('location: https://schemecatalysts.herokuapp.com/View/panchayat_dash.php');
 } else {
     echo json_encode(
             array("message" => "Error while saving record")

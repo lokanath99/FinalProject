@@ -1,7 +1,7 @@
 <?php
-    include_once 'C:\xampp\htdocs\schemecatalysts\Control\library.php';
+    include_once '/app/Control/library.php';
     if(chkLogin()){
-        header("Location: http://localhost/schemecatalysts/View/panchayat_dash.php");
+        header("Location: https://schemecatalysts.herokuapp.com/View/panchayat_dash.php");
     }
 ?>
 
@@ -34,7 +34,7 @@
 		      		<span class="fa fa-user-o"></span>
 		      		</div>
 		      		<h3 class="text-center mb-4">Panchyat Login</h3>
-					<form action="http://localhost/schemecatalysts/Control/login_action.php" method="post" class="login-form">
+					<form action="https://schemecatalysts.herokuapp.com/Control/login_action.php" method="post" class="login-form">
 						<div class="form-group">
 							<input type="email" class="form-control" id="exampleInputEmail3" name="email" placeholder="Email" required>
 						</div>

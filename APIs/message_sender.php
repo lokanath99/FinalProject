@@ -1,6 +1,6 @@
 <?php
-include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
-include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+include_once '/app/authenticate/authDB.php';
+include_once '/app/vendor/autoload.php';
 
 
 //DB connection
@@ -63,5 +63,5 @@ switch($cat) {
         break;
 }?>
 <html>
-    <meta http-equiv="refresh" content="0; URL=http://localhost/schemecatalysts/View/panchayat_dash.php" />
+    <meta http-equiv="refresh" content="0; URL=https://schemecatalysts.herokuapp.com/View/panchayat_dash.php" />
 </html>

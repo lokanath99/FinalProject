@@ -1,9 +1,9 @@
 <?php
-    include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
-    include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
-    include_once 'C:\xampp\htdocs\schemecatalysts\Control\library.php';
+    include_once '/app/authenticate/authDB.php';
+    include_once '/app/vendor/autoload.php';
+    include_once '/app/Control/library.php';
     if(chkLogin()){
-        header("Location: http://localhost/schemecatalysts/View/panchayat_dash.php");
+        header("Location: https://schemecatalysts.herokuapp.com/View/panchayat_dash.php");
     }
 ?>
 <?php
@@ -23,7 +23,7 @@
         //var_dump($query);
         if(empty($query)){
             echo "Email ID is not registered.";
-            echo "<a href='http://localhost/schemecatalysts/'>Login</a> with an already registered ID";
+            echo "<a href='https://schemecatalysts.herokuapp.com'>Login</a> with an already registered ID";
         }
         else{
             
@@ -35,7 +35,7 @@
                     
                     if($var){
                         
-                    header("Location:  http://localhost/schemecatalysts/View/panchayat_dash.php");
+                    header("Location:  https://schemecatalysts.herokuapp.com/View/panchayat_dash.php");
                     }
                     else{
                         echo "Some error";
@@ -44,7 +44,7 @@
                 else{
                     echo "You have entered a wrong password";
                     echo "<br>";
-                    echo "<a href='http://localhost/schemecatalysts/'>Login</a> with an already registered ID";
+                    echo "<a href='https://schemecatalysts.herokuapp.com'>Login</a> with an already registered ID";
                 }
                 
             
@@ -57,5 +57,5 @@
 
 
 <?php
-var_dump($_SESSION);
+// var_dump($_SESSION);
 ?>

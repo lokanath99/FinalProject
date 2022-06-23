@@ -1,7 +1,7 @@
 <?php 
-    include_once 'C:\xampp\htdocs\schemecatalysts\Control\library.php';
-    include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
-    include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+    include_once '/app/Control/library.php';
+    include_once '/app/authenticate/authDB.php';
+    include_once '/app/vendor/autoload.php';
 if(chkLogin()){
     $name = $_SESSION['uname'];
     echo '
@@ -20,28 +20,28 @@ if(chkLogin()){
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://localhost/schemecatalysts/">SchemeCatalysts</a>
+            <a class="navbar-brand" href="https://schemecatalysts.herokuapp.com">SchemeCatalysts</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/schemecatalysts/View/panchayat_dash.php">Panchayat Dash<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="https://schemecatalysts.herokuapp.com/View/panchayat_dash.php">Panchayat Dash<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/schemecatalysts/View/reg_pan.php">Register Panchayat<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="https://schemecatalysts.herokuapp.com/View/reg_pan.php">Register Panchayat<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/schemecatalysts/View/recent_updates.php">See Updates<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="https://schemecatalysts.herokuapp.com/View/recent_updates.php">See Updates<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://localhost/schemecatalysts/Control/clearall.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                    <li><a href="https://schemecatalysts.herokuapp.com/Control/clearall.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://localhost/schemecatalysts/Control/scraper.php"><span class="glyphicon glyphicon-upload"></span>Get Updates</a></li>
+                    <li><a href="https://schemecatalysts.herokuapp.com/Control/scraper.php"><span class="glyphicon glyphicon-upload"></span>Get Updates</a></li>
                 </ul>
             </div>
         </nav>
@@ -55,7 +55,7 @@ if(chkLogin()){
     </div>
 
     <div class="container-fluid">
-        <form method="POST" action="http://localhost/schemecatalysts/APIs/message_sender.php">
+        <form method="POST" action="https://schemecatalysts.herokuapp.com/APIs/message_sender.php">
             <div class="form-group">
                 <label for="name">Title of message</label>
                 <input type="text" name="name" class="form-control" id="name" placeholder="Enter Title">
@@ -129,6 +129,6 @@ if(chkLogin()){
 
 }
 else{
-    header("Location: http://localhost/schemecatalysts/index.php");
+    header("Location: https://schemecatalysts.herokuapp.com/index.php");
 }
 ?>

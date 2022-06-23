@@ -1,8 +1,8 @@
 <?php
 
-include_once 'C:\xampp\htdocs\schemecatalysts\Control\library.php';
+include_once '/app/Control/library.php';
 $var  = removeall();
-header('Location: http://localhost/schemecatalysts/index.php');
+header('Location: https://schemecatalysts.herokuapp.com/index.php');
 exit();
 
 ?>

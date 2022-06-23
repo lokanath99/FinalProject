@@ -1,5 +1,5 @@
 <?php 
-require_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+require_once '/app/vendor/autoload.php';
 
 use Twilio\Rest\Client;
 

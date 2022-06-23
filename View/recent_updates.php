@@ -19,31 +19,32 @@
 
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://localhost/schemecatalysts/">SchemeCatalysts</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/schemecatalysts/View/panchayat_dash.php">Panchayat Dash<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/schemecatalysts/View/reg_pan.php">Register Panchayat<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/schemecatalysts/View/recent_updates.php">See Updates<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://localhost/schemecatalysts/Control/clearall.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://localhost/schemecatalysts/Control/scraper.php"><span class="glyphicon glyphicon-upload"></span>Get Updates</a></li>
-                </ul>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="https://schemecatalysts.herokuapp.com">SchemeCatalysts</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="https://schemecatalysts.herokuapp.com/View/panchayat_dash.php">Panchayat Dash<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="https://schemecatalysts.herokuapp.com/View/reg_pan.php">Register Panchayat<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="https://schemecatalysts.herokuapp.com/View/recent_updates.php">See Updates<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://schemecatalysts.herokuapp.com/Control/clearall.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://schemecatalysts.herokuapp.com/Control/scraper.php"><span class="glyphicon glyphicon-upload"></span>Get Updates</a></li>
+        </ul>
+    </div>
+</nav>
     </div>
     <div class="container-fluid">
     <div class="card">
@@ -87,6 +88,6 @@
     ';
     }
     else{
-
+        header("Location: https://schemecatalysts.herokuapp.com/index.php");
     }
 ?>        

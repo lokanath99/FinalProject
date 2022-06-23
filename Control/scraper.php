@@ -1,5 +1,5 @@
 <?php
-require 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+require '/app/vendor/autoload.php';
 use Symfony\Component\HttpClient\HttpClient;
 
 #web scrapper
@@ -47,7 +47,7 @@ $data_post = array(
     "date" => date("d/m/Y")
 );
 $httpClient2 = HttpClient::create();
-$reaponse2 = $httpClient2->request('POST', 'http://localhost/schemecatalysts/APIs/Write/scheme_updates.php'/*url to be added*/, [
+$reaponse2 = $httpClient2->request('POST', 'https://schemecatalysts.herokuapp.com/APIs/Write/scheme_updates.php'/*url to be added*/, [
     'body' => json_encode($data_post),
     'headers' => ['Content-Type' => 'application/json']
 ]
@@ -61,9 +61,9 @@ echo json_encode(
 );
 // #calling update_logs using get to send messages comment out to send messages
 // $httpClient3 = HttpClient::create();
-//$reaponse3 = $httpClient3->request('GET', 'http://localhost/schemecatalysts/APIs/Read/update_logs.php');
+//$reaponse3 = $httpClient3->request('GET', 'https://schemecatalysts.herokuapp.com/APIs/Read/update_logs.php');
 // echo $reaponse3->getContent();
 
-header('location: http://localhost/schemecatalysts/View/recent_updates.php');
+header('location: https://schemecatalysts.herokuapp.com/View/recent_updates.php');
 
 ?>

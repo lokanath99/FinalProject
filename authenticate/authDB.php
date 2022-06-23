@@ -1,6 +1,6 @@
 <?php
 
-    require 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+    require '/app/vendor/autoload.php';
     class dbManager{
         private $conn;
         private $connection_string = 'mongodb+srv://lokanath:lokanath1999@cluster0.hvfvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'; 
