@@ -37,8 +37,8 @@ foreach($users_collection as $coll){
                 'phone'=>$phone,
                 'message'=>$message
             )); 
-            // $sendmsg = new send_sms();
-            // $sendmsg->send($message, $phone);
+            $sendmsg = new send_sms();
+            $sendmsg->send($message, $phone);
         }        
     }
 
