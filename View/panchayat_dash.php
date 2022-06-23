@@ -20,14 +20,17 @@ if(chkLogin()){
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#http://localhost/schemecatalysts/">SchemeCatalysts</a>
+            <a class="navbar-brand" href="http://localhost/schemecatalysts/">SchemeCatalysts</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Panchayat Dash<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="http://localhost/schemecatalysts/View/panchayat_dash.php">Panchayat Dash<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/schemecatalysts/View/reg_pan.php">Register Panchayat<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -39,7 +42,7 @@ if(chkLogin()){
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Welcome to Panchayt Dashboard '.$name.'</h1>
+            <h1 class="display-4">Welcome to Panchayt Dashboard </h1>
             <p class="lead">Please Fill The Info To Send The Messages To The Subscribers</p>
         </div>
     </div>

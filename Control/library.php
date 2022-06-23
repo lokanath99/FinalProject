@@ -34,9 +34,13 @@
     function chkLogin(){
         
         //var_dump($_SESSION);
-        
-        if($_SESSION["userLoggedIn"]== 1){
-            return true;
+        if(array_key_exists("userLoggedIn", $_SESSION)){
+            if($_SESSION["userLoggedIn"] == 1){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
         else{
             return false;
