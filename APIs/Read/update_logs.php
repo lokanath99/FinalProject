@@ -31,14 +31,15 @@ foreach($users_collection as $coll){
     $users = $collection1->find();
     foreach($users as $user){
         $phone = $user->phone;
+        $phone = '+91'.$phone;
         foreach($records as $rec){
             $message = $rec->info;
             echo json_encode(array(
                 'phone'=>$phone,
                 'message'=>$message
             )); 
-            // $sendmsg = new send_sms();
-            // $sendmsg->send($message, $phone);
+            $sendmsg = new send_sms();
+            $sendmsg->send($message, $phone);
         }        
     }
 

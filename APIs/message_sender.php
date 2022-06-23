@@ -14,7 +14,7 @@ $result = $collection->insertOne($_POST);
 $msg  = $_POST['name'] ."\n". $_POST['info'];
 $cat = $_POST['cat'];
 $records = [];
-// $sendmsg = new send_sms();
+$sendmsg = new send_sms();
 switch($cat) {
     case "1":
         $collection = $dbname->users_of_agri_and_farm;
@@ -22,7 +22,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-            // $sendmsg->send($msg, $phone);
+            $sendmsg->send($msg, $phone);
         }
         break;
     case "2":
@@ -31,7 +31,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-                // $sendmsg->send($msg, $phone);
+                $sendmsg->send($msg, $phone);
         }
         break;
     case "3":
@@ -40,7 +40,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-                // $sendmsg->send($msg, $phone);
+                $sendmsg->send($msg, $phone);
         }
         break;
     case "4":
@@ -49,7 +49,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-                        // $sendmsg->send($msg, $phone);
+                        $sendmsg->send($msg, $phone);
         }
         break;
     case "5":
@@ -58,7 +58,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-                // $sendmsg->send($msg, $phone);
+                $sendmsg->send($msg, $phone);
         }
         break;
 }?>
