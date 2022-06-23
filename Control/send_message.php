@@ -20,6 +20,6 @@ class send_sms{
 
 # sending message format as given below 
 
-// $sendmsg = new send_sms();
-// $sendmsg->send('hi from lokanath', '+919880774512');
+$sendmsg = new send_sms();
+$sendmsg->send('hi from lokanath', '+919880774512');
 ?>
