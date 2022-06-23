@@ -1,7 +1,7 @@
 <?php
-include_once 'C:\xampp\htdocs\schemecatalysts\Control\library.php';
-include_once 'C:\xampp\htdocs\schemecatalysts\authenticate\authDB.php';
-include_once 'C:\xampp\htdocs\schemecatalysts\vendor\autoload.php';
+include_once '/app/Control/library.php';
+include_once '/app/authenticate/authDB.php';
+include_once '/app/vendor/autoload.php';
 if(chkLogin()){
     echo '
     <!doctype html>
