@@ -61,7 +61,5 @@ switch($cat) {
                 $sendmsg->send($msg, $phone);
         }
         break;
-}?>
-<html>
-    <meta http-equiv="refresh" content="0; URL=https://schemecatalysts.herokuapp.com/View/panchayat_dash.php" />
-</html>
+}
+?>
