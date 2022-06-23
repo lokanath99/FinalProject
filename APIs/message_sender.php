@@ -62,4 +62,5 @@ switch($cat) {
         }
         break;
 }
+header('location: https://schemecatalysts.herokuapp.com/');
 ?>
