@@ -59,10 +59,11 @@ $i += 1;
 echo json_encode(
     array("message" => "scrapper finished job, calling the updates logs")
 );
-// #calling update_logs using get
-$httpClient3 = HttpClient::create();
-$reaponse3 = $httpClient3->request('GET', 'http://localhost/schemecatalysts/APIs/Read/update_logs.php');
-echo $reaponse3->getContent();
+// #calling update_logs using get to send messages comment out to send messages
+// $httpClient3 = HttpClient::create();
+//$reaponse3 = $httpClient3->request('GET', 'http://localhost/schemecatalysts/APIs/Read/update_logs.php');
+// echo $reaponse3->getContent();
 
+header('location: http://localhost/schemecatalysts/View/recent_updates.php');
 
 ?>

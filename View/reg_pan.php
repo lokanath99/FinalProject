@@ -45,6 +45,9 @@ if(chkLogin()){
         <ul class="nav navbar-nav navbar-right">
             <li><a href="http://localhost/schemecatalysts/Control/clearall.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
         </ul>
+		<ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://localhost/schemecatalysts/Control/scraper.php"><span class="glyphicon glyphicon-upload"></span>Get Updates</a></li>
+                </ul>
     </div>
 </nav>
 </div>
