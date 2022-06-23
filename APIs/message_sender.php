@@ -24,6 +24,7 @@ switch($cat) {
             echo "$msg sent to $phone";
             $sendmsg->send($msg, $phone);
         }
+        header('location: https://schemecatalysts.herokuapp.com/');
         break;
     case "2":
         $collection = $dbname->users_of_finanacial_services;
@@ -33,6 +34,7 @@ switch($cat) {
             echo "$msg sent to $phone";
                 $sendmsg->send($msg, $phone);
         }
+        header('location: https://schemecatalysts.herokuapp.com/');
         break;
     case "3":
         $collection = $dbname->users_of_rural_dev;
@@ -42,6 +44,7 @@ switch($cat) {
             echo "$msg sent to $phone";
                 $sendmsg->send($msg, $phone);
         }
+        header('location: https://schemecatalysts.herokuapp.com/');
         break;
     case "4":
         $collection = $dbname->users_of_skill_dev_and_enterpreneur;
@@ -51,6 +54,7 @@ switch($cat) {
             echo "$msg sent to $phone";
                         $sendmsg->send($msg, $phone);
         }
+        header('location: https://schemecatalysts.herokuapp.com/');
         break;
     case "5":
         $collection = $dbname->users_of_women_and_child;
@@ -60,6 +64,7 @@ switch($cat) {
             echo "$msg sent to $phone";
                 $sendmsg->send($msg, $phone);
         }
+        header('location: https://schemecatalysts.herokuapp.com/');
         break;
 }
 header('location: https://schemecatalysts.herokuapp.com/');
