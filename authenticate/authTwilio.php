@@ -6,7 +6,7 @@ use Twilio\Rest\Client;
 class twilio{
 
     private $sid = 'ACc250b1e5dd5a9c7553b1c0913b086832';
-    private $token = '990b8842bd8a81367e9fecb02105104e';
+    private $token = '5e09010dbae9ce45d920814b6ccd3bd1';
     private $phone_num = '+17408075352';
     private $client;
 

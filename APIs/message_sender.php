@@ -32,7 +32,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-                $sendmsg->send($msg, $phone);
+            $sendmsg->send($msg, $phone);
         }
         header('location: https://schemecatalysts.herokuapp.com/');
         break;
@@ -42,7 +42,7 @@ switch($cat) {
         foreach($records as $rec){
             $phone = $rec->phone;
             echo "$msg sent to $phone";
-                $sendmsg->send($msg, $phone);
+            $sendmsg->send($msg, $phone);
         }
         header('location: https://schemecatalysts.herokuapp.com/');
         break;
